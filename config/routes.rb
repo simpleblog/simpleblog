@@ -1,15 +1,9 @@
 Simpleblog::Application.routes.draw do
-   put 'admin/addblogs'  =>'admin#addblogs',:as=>:addblogs
-   post 'admin/login'                   => 'admin#login', :as => :login
-   get 'admin/addblogs'                   => 'admin#addblogs', :as => :addblogs
-   match ':controller(/:action(/:id(.:format)))'
-   #post 'admin/create'                    =>'admin@create',:as=>:create
-   resources :admin
-  #get "admin/login"
+  get "comment/viewblog"
 
-  #get "admin/logout"
+  get "comments/viewblog"
 
-  #get "admin/addblogs"
+  get "blogs/viewblogs"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,6 +60,10 @@ Simpleblog::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-   #post 'admin/admin/create' => 'admin#create'
+  match ':controller(/:action(/:id(.:format)))'
+  resources :comments
+  resources :blogs
 
+  #get '/blogs'=>'comments#save',:as=>:blogs
+   #get '/blogs' => 'comments#viewblogs' , :as=>:viewblog
 end

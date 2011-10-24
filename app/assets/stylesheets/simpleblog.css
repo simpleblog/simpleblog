@@ -26,7 +26,7 @@ h1{ color:#26606D; font-size:50px;}
 #panel {
 	float:left; width:970px;
 }
-#panel .editContent{width:100%; margin:0px; float:left}
+#panel .editContent{width:100%; margin:0px; float:left;}
 #panel .editContent h2{width:100%; margin:0px; padding:5px 0px; float:left; font-family:Georgia; font-size:30px; color:#0b636b; line-height:34px; font-weight:normal; border-bottom:1px solid #BB9D7E}
 #panel .editContent h3{width:100%; margin:4px 0 0 0; padding:0px; float:left; font-family:Georgia; font-size:12px; color:#943415; line-height:32px; font-weight:normal}
 #panel .editContent p{width:100%; margin:3px 0 0 0; padding:0px; float:left; font-family:Arial; font-size:12px; color:#bb9d59; line-height:18px}
@@ -35,9 +35,13 @@ h1{ color:#26606D; font-size:50px;}
 #panel .testimonial h2{ margin:30px 0 0 0; padding:0px; font-family:Georgia; font-size:16px; color:#943415; line-height:28px; font-weight:normal; padding-right:20px;}
 #panel .testimonial p{ margin:13px 0 0 0; padding:0px; font-family:Arial; font-size:12px; color:#bb9d59; line-height:16px; text-indent:12px; background:url(quo.jpg) no-repeat;}
 
-#panel .testimonial table { width:100%;}
+#panel .testimonial table { width:100%; margin-bottom: 30px;}
 #panel .testimonial td {
-	border-bottom:1px dotted #BB9D7E; padding:10px 0px;
+	border-bottom:1px dotted #BB9D7E; padding:10px 0px;font-family:Georgia; font-size:12px; color:#943415; line-height:32px; font-weight:normal;
+    text-align: left;
+}
+#panel .testimonial .testimonial_visitor {
+    font-weight: bold; width: 120px; padding-left:3px;
 }
 
 .date{width:644px; height:29px; margin:30px 0 0 0; padding:0px; float:left; background:#f9f6d4}
@@ -45,6 +49,16 @@ h1{ color:#26606D; font-size:50px;}
 .date .right{width:45px; height:29px; margin:0px; padding:0 0 0 38px; float:right; background:url(read.jpg) no-repeat 12px 0}
 .date .right a{font-family:Arial; font-size:11px; color:#943415; line-height:30px; font-weight:bold; text-decoration:none}
 
+
+.COMMENT {
+    COLOR:#0b636b;MARGIN: 10PX 0PX;
+}
+.COMMENT TEXTAREA{
+    border:1px solid #BB9D7E; WIDTH: 100%; HEIGHT: 150PX; MARGIN: 10PX 0PX; LINE-HEIGHT: 30PX;font-size: 12px;
+}
+.COMMENT INPUT {
+    border:1px solid #BB9D7E; WIDTH: 250PX; HEIGHT: 20PX; MARGIN: 10PX 0PX;LINE-HEIGHT: 30PX;
+}
 
 #leftPanel .services{width:604px; margin:34px 0 0 0; padding:0px; float:left}
 #leftPanel .services h2{width:604px; margin:0px; padding:0px; float:left; font-family:Georgia; font-size:24px; color:#2c787b; line-height:28px; font-weight:normal}
