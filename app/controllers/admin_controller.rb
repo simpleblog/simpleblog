@@ -10,7 +10,7 @@ class AdminController < ApplicationController
       #@pass = user.password
       if user
 
-          redirect_to :action => 'addblogs'
+          redirect_to :action => 'add_blogs'
       else
           redirect_to(:action => "index")
           flash[:notice]="登录失败！"
@@ -29,7 +29,7 @@ class AdminController < ApplicationController
   end
 
 
-  def addblogs
+  def add_blogs
     @blog= Blog.find(:all)
     @newblog=Blog.new
 
@@ -42,7 +42,7 @@ class AdminController < ApplicationController
   @id=@newblog.id
     if @newblog.save
       flash[:notice]=@newblog.title
-      redirect_to :controller => 'admin',:action=>'addblogs',:id=>@id
+      redirect_to :controller => 'admin',:action=>'add_blogs',:id=>@id
     end
   end
 end
