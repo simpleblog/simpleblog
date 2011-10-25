@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TemplateWorld - Solitude </title>
+
+</head>
+<body>
+<div id="mainWrap">
+
+<div id="mainPanel">
+  <div id="loginPanel">
+    <div class="contacts">
+
+      <h2>welcome</h2>
+      <%= form_tag 'admin/login',:method =>:post do %><br />
+          <%= flash[:notice] %>
+      <p>Name</p> <%=text_field_tag :username,params[:username]%>
+      <p>password</p><%=password_field_tag :password,params[:password]%><br />
+<%= submit_tag "登录" %>&nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" name="close2" value="重置" >
+      </div>
+
+      <%end%>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
+
+
+
+          
+  
+
+  
+          
+  
+          
