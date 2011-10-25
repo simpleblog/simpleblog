@@ -13,7 +13,7 @@ class AdminController < ApplicationController
           redirect_to :action => 'addblogs'
       else
           redirect_to(:action => "index")
-          flash[:notice]="登录失败！"
+          flash[:notice]="login fail！"
       end
 
   end
@@ -24,7 +24,7 @@ class AdminController < ApplicationController
   end
   def logout
     redirect_to:action=>"index"
-    flash[:notice]="注销成功"
+    flash[:notice]="logout succeed"
 
   end
 
