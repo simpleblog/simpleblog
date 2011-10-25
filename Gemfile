@@ -31,3 +31,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
+group :test,:development do
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
