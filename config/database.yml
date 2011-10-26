@@ -12,7 +12,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: user blog comment
+  database: simpleblog_development
   pool: 5
   username: root
   password:
