@@ -13,7 +13,7 @@ class AdminController < ApplicationController
           redirect_to :action => 'add_blogs'
       else
           redirect_to(:action => "index")
-          flash[:notice]="登录失败！"
+          flash[:notice]="login failed！"
       end
 
   end

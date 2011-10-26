@@ -26,8 +26,8 @@ Given /^I have a comment with content "([^"]*)"$/ do |content|
   comment.save
 end
 
-When /^I fill in ([^"]*) with "([^"]*)"$/ do |content,value|
-  fill_in(content,:with=>value)
+When /^I fill in ([^"]*) with "([^"]*)"$/ do |arg1,value|
+  fill_in(arg1,:with=>value)
 end
 
 When /^I click on "([^"]*)" button$/ do |locator|

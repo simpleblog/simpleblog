@@ -8,4 +8,3 @@ Feature: Add Comment Feature
       When I fill in comment_content with "aa"
       And I click on "Create Comment" button
 
-

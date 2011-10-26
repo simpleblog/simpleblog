@@ -2,11 +2,11 @@
   <div class="editContent">
      <h2><%= @blog.title %></h2>
      <p><%= @blog.content %></p>
-     <div class="testimonial">
+     <div class="testImonial">
      <table>
         <% @comments.each do |comment| %>
           <tr>
-            <td class="testimonial_visitor">
+            <td class="testImonial_visitor">
               <%= comment.visitor %>
 
             </td>
@@ -19,19 +19,19 @@
   </div>
     <%= form_for @comment, :url => { :controller => 'comments', :action => 'create'} do |f| %>
 
-      <div class="field COMMENT">
+      <div class="field comment">
         Your Comment<br />
         <%= f.text_area :content %>
       </div>
-        <div class="field COMMENT">
+        <div class="field comment">
         Your Nickname<br />
         <%= f.text_field :visitor %>
       </div>
-      <div visible = false CLASS="COMMENT">
+      <div visible = false CLASS="comment">
         Blog_id<br/>
         <%= f.text_field :blog_id%>
       </div>
-      <div class="actions" CLASS="COMMENT_BTN">
+      <div class="actions" CLASS="comment_btn">
           <%= f.submit %>
 
       </div>
