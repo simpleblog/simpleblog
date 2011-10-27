@@ -1,16 +1,11 @@
 Simpleblog::Application.routes.draw do
-  get "comment/viewblog"
-
-  get "comments/viewblog"
-
-  get "blogs/viewblogs"
     
-  put 'admin/addblogs'  =>'admin#addblogs',:as=>:addblogs
+  put 'admin/add_blogs'  =>'admin#addblogs',:as=>:add_blogs
   post 'admin/login'    => 'admin#login', :as => :login
-  get 'admin/addblogs'  => 'admin#addblogs', :as =>:addblogs
+  get '/admin'  => 'admin#index', :as =>:admin
   match ':controller(/:action(/:id(.:format)))'
 
-   resources :admin
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

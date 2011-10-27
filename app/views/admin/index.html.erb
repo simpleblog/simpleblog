@@ -1,21 +1,17 @@
 <div id="mainWrap">
-
-<div id="mainPanel">
-  <div id="loginPanel">
-    <div class="contacts">
-
-      <h2>welcome</h2>
-      <%= form_tag 'admin/login',:method =>:post do %><br />
-          <%= flash[:notice] %>
-      <p>Name</p> <%=text_field_tag :username,params[:username]%>
-      <p>password</p><%=password_field_tag :password,params[:password]%><br />
-<%= submit_tag "login" %>&nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" name="close2" value="reset" >
+  <div id="mainPanel">
+    <div id="loginPanel">
+      <div class="contacts">
+        <h2>welcome</h2>
+        <%= form_tag 'admin/login',:method =>:post do %><br />
+            <%= flash[:notice] %>
+            <p>Name</p> <%=text_field_tag :username,params[:username]%>
+            <p>password</p><%=password_field_tag :password,params[:password]%><br />
+            <%= submit_tag "login" %>&nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" name="close2" value="reset" >
+        <%end%>
       </div>
-
-      <%end%>
+    </div>
   </div>
-
-</div>
 </div>
 
 

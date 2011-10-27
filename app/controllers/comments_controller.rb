@@ -1,12 +1,10 @@
 class CommentsController < ApplicationController
   def index
-
-    @blogid = params[:id]
-    @blog = Blog.find(@blogid)
-    @comments = Comment.find_all_by_blog_id(@blogid)
+    @blog_id = params[:id]
+    @blog = Blog.find(@blog_id)
+    @comments = Comment.find_all_by_blog_id(@blog_id)
     @comment = Comment.new
-    @comment.blog_id=@blogid
-
+    @comment.blog_id = @blog_id
   end
 
   def create
@@ -16,17 +14,13 @@ class CommentsController < ApplicationController
 
     if @comment.content == nil
       flash[:notice] = "no"
-     redirect_to :controller => 'blogs',:action=>'index'
-  else
-
-     if @comment.save
-       flash[:notice] = @comment.content
-     redirect_to :controller => 'comments',:action=>'index' ,:id=>@id
-     end
-     #flash[:notice] = "success"
-
+      redirect_to :controller => 'blogs',:action =>'index'
+    else
+      if @comment.save
+        flash[:notice] = @comment.content
+        redirect_to :controller => 'comments',:action =>'index' ,:id => @id
+      end
+      #flash[:notice] = "success"
     end
-
   end
-
 end
