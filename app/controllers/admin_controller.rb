@@ -8,6 +8,7 @@ class AdminController < ApplicationController
     @password = params[:password]
     user = User.find_by_username_and_password(params[:username],params[:password])
     if user
+      session[:user_id] = user.id
       redirect_to :action => 'add_blogs'
     else
       redirect_to(:action => "index")
@@ -16,11 +17,15 @@ class AdminController < ApplicationController
   end
 
   def logout
+    session[:user_id] = nil
     redirect_to :action => "index"
     flash[:notice] = "log out success"
   end
 
   def add_blogs
+    if session[:user_id] == nil
+      redirect_to :action => "index"
+    end
     @blogs = Blog.find(:all)
     @new_blog = Blog.new
   end
