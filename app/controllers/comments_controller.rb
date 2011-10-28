@@ -20,7 +20,6 @@ class CommentsController < ApplicationController
         flash[:notice] = @comment.content
         redirect_to :controller => 'comments',:action =>'index' ,:id => @id
       end
-      #flash[:notice] = "success"
     end
   end
 end
