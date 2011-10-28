@@ -7,4 +7,5 @@ Feature: Add Comment Feature
     Given I have a comment with content "aa"
     When I fill in comment_content with "aa"
     And I click on "Create Comment" button
+    Then I should see "aa"
 

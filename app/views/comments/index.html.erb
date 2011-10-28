@@ -1,34 +1,37 @@
-<div id="panel">
-  <div class="editContent">
-     <h2><%= @blog.title %></h2>
-     <p><%= @blog.content %></p>
-     <div class="testImonial">
-       <table>
-          <% @comments.each do |comment| %>
-            <tr>
-              <td class="testImonial_visitor">
-                <%= comment.visitor %>
-              </td>
-              <td>
-                <%= comment.content %>
-              </td>
-            </tr>
-          <% end %>
-       </table>
-     </div>
-    <%= form_for @comment, :url => { :controller => 'comments', :action => 'create'} do |f| %>
-        <div class="field comment">Your Comment<br />
-          <%= f.text_area :content %>
-        </div>
-        <div class="field comment">Your Nickname<br />
-          <%= f.text_field :visitor %>
-        </div>
-        <div visible = false CLASS="comment">Blog_id<br/>
-          <%= f.text_field :blog_id%>
-        </div>
-        <div class="actions" CLASS="comment_btn">
-          <%= f.submit %>
-        </div>
-    <% end %>
+<div id="logoWrap">
+  <div id="panel">
+    <div class="editContent">
+
+       <div class="testImonial">
+         <h2><%= @blog.title %></h2>
+         <p><%= @blog.content %></p>
+         <table>
+            <% @comments.each do |comment| %>
+              <tr>
+                <td class="testImonial_visitor">
+                  <%= comment.visitor %>
+                </td>
+                <td>
+                  <%= comment.content %>
+                </td>
+              </tr>
+            <% end %>
+         </table>
+       </div>
+      <%= form_for @comment, :url => { :controller => 'comments', :action => 'create'} do |f| %>
+          <div class="field comment">Your Comment<br />
+            <%= f.text_area :content %>
+          </div>
+          <div class="field comment">Your Nickname<br />
+            <%= f.text_field :visitor %>
+          </div>
+          <div visible = false CLASS="comment">Blog_id<br/>
+            <%= f.text_field :blog_id%>
+          </div>
+          <div class="actions" CLASS="comment_btn">
+            <%= f.submit %>
+          </div>
+      <% end %>
+    </div>
   </div>
 </div>

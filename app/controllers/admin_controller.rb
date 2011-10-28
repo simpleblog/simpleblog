@@ -9,7 +9,7 @@ class AdminController < ApplicationController
     user = User.find_by_username_and_password(params[:username],params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to :action => 'add_blogs'
+      redirect_to :controller => "blogs", :action => 'add_blogs'
     else
       redirect_to(:action => "index")
       flash[:notice] = "login failed"
@@ -20,36 +20,5 @@ class AdminController < ApplicationController
     session[:user_id] = nil
     redirect_to :action => "index"
     flash[:notice] = "log out success"
-  end
-
-  def add_blogs
-    if session[:user_id] == nil
-      redirect_to :action => "index"
-    end
-    @blogs = Blog.find(:all)
-    @new_blog = Blog.new
-  end
-
-  def create
-    @new_blog = Blog.new(params[:blog])
-    @id = @new_blog.id
-    if @new_blog.save
-      flash[:notice] = @new_blog.title
-      redirect_to :controller => 'admin',:action => 'add_blogs',:id => @id
-    end
-  end
-
-  def edit
-    @id = params[:id]
-    @edit_blog = Blog.find(@id)
-    @blogs = Blog.find(:all)
-  end
-
-  def update
-    @blog = Blog.find(params[:id])
-    if @blog.update_attributes(params[:blog])
-      flash[:notice] = "Edit Success!"
-      redirect_to :controller => "admin" ,:action => "add_blogs"
-    end
   end
 end

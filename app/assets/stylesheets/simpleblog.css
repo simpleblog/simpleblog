@@ -6,7 +6,7 @@ body{margin:0px; padding:0px; background:#fffde4 url(bodyBg.jpg) repeat-x;font-f
 
 /*head
 --------------------------------------------------------*/
-#logoWrap{}
+#logoWrap{ background-image: url("logo.GIF"); height: 50px; background-repeat: no-repeat;margin-top: 70px;}
 h1{ color:#26606D; font-size:50px;}
 
 /*right
@@ -32,8 +32,8 @@ h1{ color:#26606D; font-size:50px;}
 #panel .editContent p{width:100%; margin:3px 0 0 0; padding:0px; float:left; font-family:Arial; font-size:12px; color:#bb9d59; line-height:18px}
 
 #panel .testImonial{ width:100%; margin:0px; padding:0px; float:left; margin-top:30px;}
-#panel .testImonial h2{ margin:30px 0 0 0; padding:0px; font-family:Georgia; font-size:16px; color:#943415; line-height:28px; font-weight:normal; padding-right:20px;}
-#panel .testImonial p{ margin:13px 0 0 0; padding:0px; font-family:Arial; font-size:12px; color:#bb9d59; line-height:16px; text-indent:12px; background:url(quo.jpg) no-repeat;}
+#panel .testImonial h2{ margin:30px 0 0 0; padding:0px; font-family:Georgia; font-size:36px; color:#943415; line-height:28px; font-weight:normal; padding-right:20px;}
+#panel .testImonial p{ margin:13px 0 0 0; padding:0px; font-family:Arial; font-size:14px; color:#bb9d59; line-height:16px; text-indent:12px; }
 
 #panel .testImonial table { width:100%; margin-bottom: 30px;}
 #panel .testImonial td {
@@ -104,6 +104,7 @@ h1{ color:#26606D; font-size:50px;}
 --------------------------------------------------------*/
 #footPanel{ margin:25px auto; float:left; background:url(footbg.jpg) no-repeat center top; width:970px;}
 #footPanel .copyright{; margin:25px auto; padding:0px; font-family:Arial; font-size:11px; color:#bb9d59; line-height:15px; text-align:center;}
+
 
 
 /*login

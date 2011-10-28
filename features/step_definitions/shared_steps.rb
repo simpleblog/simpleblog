@@ -20,6 +20,7 @@ Then /^I should see "([^"]*)"$/ do |arg1|
   end
 end
 
+
 Given /^I have a comment with content "([^"]*)"$/ do |content|
   comment=Comment.new
   comment.content=content
@@ -51,4 +52,10 @@ Given /^My blog account is "([^"]*)" and "([^"]*)"$/ do |username,password|
   account.username=username;
   account.password=password;
   account.save
+end
+
+Given /^I want to update "([^"]*)"$/ do |title|
+  new_blog=Blog.new
+  new_blog.title=title
+  new_blog.save
 end
