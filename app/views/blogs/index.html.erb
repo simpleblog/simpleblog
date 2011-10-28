@@ -1,6 +1,6 @@
 <div id="listPanel">
   <%= flash[:notice] %>
-    <% @blogs.each do |blog| %>
+  <% @blogs.each do |blog| %>
       <div class="testimonial">
         <h2> <%=  link_to "#{blog.title}",:controller=>"comments",:action =>"index",:id=>blog %></h2>
       </div>
