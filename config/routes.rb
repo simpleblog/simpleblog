@@ -1,12 +1,9 @@
 Simpleblog::Application.routes.draw do
-  #namespace :admin do
-  #  resource :blogs
-  #end
-    
-  put 'blogs/add_blogs'  =>'blogs#addblogs',:as=>:add_blogs
   post 'admin/index'    => 'admin#login', :as => :login
-  get '/admin'  => 'admin#index', :as =>:admin
+  resources :blogs
+  resources :comments
   match ':controller(/:action(/:id(.:format)))'
+
   #resources :comments
   #resources :blogs
 

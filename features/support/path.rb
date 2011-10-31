@@ -1,8 +1,10 @@
 module NavigationHelpers
   def path_to(page_name)
     result = case page_name
-              when "sign up"
-                '/signup'
+              when "add blogs"
+                '/blogs/new'
+              when "admin"
+                '/admin'
               else
                 begin
                   page_name =~ /(.*)/
@@ -13,6 +15,11 @@ module NavigationHelpers
                   "Now, go and add a mapping in #{__FILE__}"
                 end
               end
+  end
+
+  def fill_in_with_field_converted(arg_name,value)
+    arg_convert = arg_name.split(/\s+/).join('_')
+    fill_in(arg_convert, :with => value)
   end
 end
 

@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all;
   end
-  def add_blogs
+  def new
     @blogs = Blog.find(:all)
     @new_blog = Blog.new
   end
@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
     @id = @new_blog.id
     if @new_blog.save
       flash[:notice] = @new_blog.title
-      redirect_to :controller => 'blogs',:action => 'add_blogs',:id => @id
+      redirect_to :action => 'new',:id => @id
     end
   end
 
@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     if @blog.update_attributes(params[:blog])
       flash[:notice] = "Edit Success!"
-      redirect_to :controller => "blogs" ,:action => "add_blogs"
+      redirect_to :action => "new"
     end
   end
 end

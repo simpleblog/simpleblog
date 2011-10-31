@@ -9,7 +9,8 @@ class AdminController < ApplicationController
     user = User.find_by_username_and_password(params[:username],params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to :controller => "blogs", :action => 'add_blogs'
+      redirect_to new_blog_path
+      #:controller => "blogs", :action => 'new'
     else
       redirect_to(:action => "index")
       flash[:notice] = "login failed"
