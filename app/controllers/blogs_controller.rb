@@ -12,17 +12,17 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @new_blog = Blog.new(params[:blog])
-    @id = @new_blog.id
-    if @new_blog.save
-      flash[:notice] = @new_blog.title
-      redirect_to :action => 'new', :id => @id
+    new_blog = Blog.new(params[:blog])
+    id = new_blog.id
+    if new_blog.save
+      flash[:notice] = new_blog.title
+      redirect_to :action => 'new', :id => id
     end
   end
 
   def edit
-    @id = params[:id]
-    @edit_blog = Blog.find(@id)
+    id = params[:id]
+    @edit_blog = Blog.find(id)
     @blogs = Blog.find(:all)
   end
 
