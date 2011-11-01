@@ -1,11 +1,11 @@
-Feature: blog operation
+Feature: Blog operation
   Scenario: Add blog without login
     When I go to the add blogs page
     Then I go to the admin page
     
   Scenario: Login and add blog
     Given My blog account is "username" and "password"
-    And  I go to the admin page
+    And I go to the admin page
     And I fill in username with "username"
     And I fill in password with "password"
     And I click on "login" button

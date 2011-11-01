@@ -1,9 +1,11 @@
 class BlogsController < ApplicationController
   before_filter :check_session
   skip_before_filter :check_session, :only => [:index]
+
   def index
-    @blogs = Blog.all;
+    @blogs = Blog.all
   end
+
   def new
     @blogs = Blog.find(:all)
     @new_blog = Blog.new
@@ -14,7 +16,7 @@ class BlogsController < ApplicationController
     @id = @new_blog.id
     if @new_blog.save
       flash[:notice] = @new_blog.title
-      redirect_to :action => 'new',:id => @id
+      redirect_to :action => 'new', :id => @id
     end
   end
 
