@@ -1,4 +1,5 @@
 Simpleblog::Application.routes.draw do
+  root :to => "admin#login"
   match 'admin/login' => 'admin#login'
   get 'admin/logout' => 'admin#logout'
   resources :blogs, :comments

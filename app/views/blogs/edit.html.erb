@@ -1,28 +1,24 @@
-<div id="logoWrap">
-  <div id="leftPanel">
-    <div class="editContent">
-      <h2>Edit blog</h2>
-      <%= form_for @edit_blog, :url => { :controller => 'blogs', :action => 'update',:id => @edit_blog} do |f| %>
-          <%= f.label :title %><br />
-          <%= f.text_field :title %><br/>
-          <%= f.label :content %><br />
-          <%= f.text_area :content %><br />
-          <div align="right"><%= f.submit "Update" %></div>
-      <% end %>
-    </div>
-    <div class="date" align="right">
-      <%= link_to "logout", :controller => "admin", :action => "logout" %>
-      <div align="right"> </div>
-    </div>
+<div id="leftPanel">
+  <div class="editContent">
+    <h2>Edit blog</h2>
+    <%= form_for @edit_blog, :url => { :controller => 'blogs', :action => 'update',:id => @edit_blog} do |f| %>
+        <%= f.label :title %><br />
+        <%= f.text_field :title %><br/>
+        <%= f.label :content %><br />
+        <%= f.text_area :content %><br />
+        <div align="right"><%= f.submit "Update" %></div>
+    <% end %>
   </div>
-  <div id="rightPanel">
-    <div class="project">
-      <h2>Blog Link</h2>
-      <%= render "blog" %>
-    </div>
-  </div>
-  <div id="footPanel">
-    <div class="copyright">© Copyright Information Goes Here. All Rights Reserved.</div>
+  <div class="date" align="right">
+    <%= link_to "logout", :controller => "admin", :action => "logout" %>
+    <div align="right"> </div>
   </div>
 </div>
+<div id="rightPanel">
+  <div class="project">
+    <h2>Blog Link</h2>
+    <%= render "blog" %>
+  </div>
+</div>
+
 

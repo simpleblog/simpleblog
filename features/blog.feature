@@ -20,7 +20,7 @@ Feature: Blog operation
 
   Scenario: User login fail
     Given My blog account is "username" and "password"
-    When  I go to the admin page
+    When I go to the admin page
     And I fill in username with "ab"
     And I fill in password with "ac"
     And I click on "login" button
