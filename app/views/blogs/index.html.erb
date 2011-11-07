@@ -4,7 +4,7 @@
     <%= flash[:notice] %>
     <% @blogs.each do |blog| %>
         <div class="testimonial">
-          <h2> <%=  link_to "#{blog.title}",:controller=>"comments",:action =>"index",:id=>blog %></h2>
+          <h2> <%= link_to "#{blog.title}",new_blog_comment_path(blog)%></h2>
         </div>
     <% end %>
   </div>

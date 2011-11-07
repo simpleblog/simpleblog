@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  respond_to :html,:js
+  before_filter :find_blog
   def index
     blog_id = params[:id]
     @blog = Blog.find(blog_id)
@@ -6,19 +8,20 @@ class CommentsController < ApplicationController
     @comment = Comment.new
     @comment.blog_id = blog_id
   end
-
+  def new
+    @comments = @blog.comments
+    @comment = @blog.comments.build
+  end
   def create
-    @comment = Comment.new(params[:comment])
-    @content = @comment.content;
-    id = @comment.blog_id
-    if @comment.content == nil
-      flash[:notice] = "no"
-      redirect_to :controller => 'blogs',:action =>'index'
+    @comment = @blog.comments.build(params[:comment])
+    if @comment.save
+      respond_with @comment,:location => new_blog_comment_path
     else
-      if @comment.save
-        flash[:notice] = @comment.content
-        redirect_to :controller => 'comments',:action =>'index' ,:id => id
-      end
+       render :action => "new"
     end
   end
+  private
+    def find_blog
+      @blog = Blog.find(params[:blog_id])
+    end
 end

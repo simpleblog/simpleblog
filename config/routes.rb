@@ -2,7 +2,10 @@ Simpleblog::Application.routes.draw do
   root :to => "blogs#index"
   match 'admin/login' => 'admin#login'
   get 'admin/logout' => 'admin#logout'
-  resources :blogs, :comments
+
+  resources :blogs do
+    resources :comments
+  end
 
   #match ':controller(/:action(/:id(.:format)))'
 

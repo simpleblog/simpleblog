@@ -3,20 +3,11 @@
     <div class="testImonial">
       <h2><%= @blog.title %></h2>
       <p><%= @blog.content %></p>
-      <table>
-        <% @comments.each do |comment| %>
-            <tr>
-              <td class="testImonial_visitor">
-                <%= comment.visitor %>
-              </td>
-              <td>
-                <%= comment.content %>
-              </td>
-            </tr>
-        <% end %>
-      </table>
+      <div id="comments">
+        <%= render @comments %>
+      </div>
     </div>
-    <%= form_for @comment, :url => { :controller => 'comments', :action => 'create'} do |f| %>
+    <%= form_for @comment,:url => { :controller => 'comments', :action => 'create'} do |f| %>
         <div class="field comment">Your Comment<br />
           <%= f.text_area :content %>
         </div>
